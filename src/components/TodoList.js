@@ -6,7 +6,7 @@ export function TodoList({ todos, dispatch }) {
     <div>
       <button onClick={() => dispatch({ type: 'add' })}>Add todo</button>
       {todos.map(item => (
-        <TodoItem key={item.id} {...item} />
+        <TodoItem key={item.id} {...item} dispatch={dispatch} />
       ))}
     </div>
   );

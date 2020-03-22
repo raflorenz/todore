@@ -9,10 +9,23 @@ function appReducer(state, action) {
         ...state,
         {
           id: Date.now(),
-          title: 'todo added',
+          title: `todo added - ${Date.now()}`,
           completed: false
         }
-      ]
+      ];
+    case 'delete':
+      return state.filter(item => item.id !== action.payload);
+
+    case 'complete':
+      return state.map(item => {
+        if (item.id === action.payload) {
+          return {
+            ...item,
+            completed: !item.completed
+          };
+        }
+        return item;
+      });
     default:
       return state;
   }
