@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { TodoList } from './components/TodoList';
 import './App.css';
 
 function appReducer(state, action) {
@@ -23,10 +24,7 @@ function App() {
   return (
     <div className="App">
       <h1>Moto</h1>
-      <button onClick={() => dispatch({ type: 'add' })}>Add todo</button>
-      {state.map(item => (
-        <div key={item.id}>{item.title}</div>
-      ))}
+      <TodoList todos={state} dispatch={dispatch} />
     </div>
   );
 }
