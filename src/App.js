@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { TodoList } from './components/TodoList';
 import './App.css';
 
@@ -15,7 +15,6 @@ function appReducer(state, action) {
       ];
     case 'delete':
       return state.filter(item => item.id !== action.payload);
-
     case 'complete':
       return state.map(item => {
         if (item.id === action.payload) {
@@ -26,6 +25,8 @@ function appReducer(state, action) {
         }
         return item;
       });
+    case 'reset':
+      return action.payload;
     default:
       return state;
   }
@@ -33,6 +34,15 @@ function appReducer(state, action) {
 
 function App() {
   const [state, dispatch] = useReducer(appReducer, []);
+
+  useEffect(() => {
+    const data = localStorage.getItem('todos');
+    dispatch({ type: 'reset', payload: JSON.parse(data) });
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(state));
+  }, [state]);
 
   return (
     <div className="App">
