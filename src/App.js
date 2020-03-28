@@ -9,7 +9,7 @@ function appReducer(state, action) {
         ...state,
         {
           id: Date.now(),
-          title: `todo added - ${Date.now()}`,
+          title: action.payload,
           completed: false
         }
       ];
