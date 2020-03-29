@@ -2,12 +2,12 @@ import React from 'react';
 import { TodoItem } from './TodoItem';
 import { AddTodoForm } from './AddTodoForm';
 
-export function TodoList({ todos, dispatch }) {
+export function TodoList({ todos }) {
   return (
     <div>
-      <AddTodoForm dispatch={dispatch} />
+      <AddTodoForm />
       {todos.map(item => (
-        <TodoItem key={item.id} {...item} dispatch={dispatch} />
+        <TodoItem key={item.id} {...item} />
       ))}
     </div>
   );

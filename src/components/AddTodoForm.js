@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import TodoContext from '../TodoContext';
 
-export function AddTodoForm({ dispatch }) {
+export function AddTodoForm() {
     const [input, setInput] = useState('');
+    const dispatch = useContext(TodoContext);
 
     const submitForm = e => {
         e.preventDefault();

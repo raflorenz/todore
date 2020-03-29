@@ -1,5 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 import { TodoList } from './components/TodoList';
+import TodoContext from './TodoContext';
 import './App.css';
 
 function appReducer(state, action) {
@@ -45,10 +46,12 @@ function App() {
   }, [state]);
 
   return (
-    <div className="App">
-      <h1>Moto</h1>
-      <TodoList todos={state} dispatch={dispatch} />
-    </div>
+    <TodoContext.Provider value={dispatch}>
+      <div className="app">
+        <h1>Moto</h1>
+        <TodoList todos={state} />
+      </div>
+    </TodoContext.Provider>
   );
 }
 
