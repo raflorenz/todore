@@ -4,7 +4,7 @@ import { AddTodoForm } from './AddTodoForm';
 
 export function TodoList({ todos }) {
   return (
-    <div>
+    <div class="todo-list">
       <AddTodoForm />
       {todos.map(item => (
         <TodoItem key={item.id} {...item} />

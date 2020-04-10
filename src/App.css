@@ -1,0 +1,36 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+}
+
+.app {
+    min-width: 320px;
+}
+
+h1 {
+    margin: 0 0 20px;
+}
+
+button {
+    margin-left: 5px;
+}
+
+.todo-item {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
