@@ -11,8 +11,6 @@ function TodoReducer(state, action) {
                     completed: false
                 }
             ];
-        case 'delete':
-            return state.filter(item => item.id !== action.payload);
         case 'complete':
             return state.map(item => {
                 if (item.id === action.payload) {
@@ -23,6 +21,18 @@ function TodoReducer(state, action) {
                 }
                 return item;
             });
+        case 'update':
+            return state.map(item => {
+                if (item.id === action.payload.id) {
+                    return {
+                        ...item,
+                        title: action.payload.input
+                    };
+                }
+                return item;
+            });
+        case 'delete':
+            return state.filter(item => item.id !== action.payload);
         case 'reset':
             return action.payload;
         default:

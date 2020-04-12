@@ -34,3 +34,20 @@ button {
     justify-content: space-between;
     margin-bottom: 10px;
 }
+
+.todo-item.completed label {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.todo-item .edit {
+    display: none;
+}
+
+.todo-item.editing .edit {
+    display: block;
+}
+
+.todo-item.editing .todo-view {
+    display: none;
+}
