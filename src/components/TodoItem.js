@@ -36,10 +36,8 @@ export function TodoItem({ id, title, completed }) {
           setEditing(false);
         }} 
       />
-      
-      <div className="todo-buttons">
-        <button onClick={() => dispatch({ type: 'delete', payload: id })}>Delete</button>
-      </div>
+
+      <button onClick={() => dispatch({ type: 'delete', payload: id })}>Delete</button>
     </div>
   );
 }

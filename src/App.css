@@ -15,10 +15,6 @@ body {
     margin: 0;
 }
 
-.app {
-    min-width: 320px;
-}
-
 h1 {
     margin: 0 0 20px;
 }
@@ -50,4 +46,12 @@ button {
 
 .todo-item.editing .todo-view {
     display: none;
+}
+
+.todo-item button {
+    visibility: hidden;
+}
+
+.todo-item:hover button {
+    visibility: visible;
 }
