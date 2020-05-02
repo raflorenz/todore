@@ -1,2 +1,2 @@
 # Moto
-Modern todo made with React hooks (useReducer, useContext, useEffect)
+The obligatory todo list app built using React with React Hooks (useState, useReducer, useContext, useEffect, useRef)
