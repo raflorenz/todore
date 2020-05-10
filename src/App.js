@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
+import { AddTodoForm } from './components/AddTodoForm';
 import { TodoList } from './components/TodoList';
-import { useTodo } from './TodoReducer';
+import TodoReducer from './TodoReducer';
 import TodoContext from './TodoContext';
 import './App.css';
 
 function App() {
-  const [state, dispatch] = useTodo();
+  const [state, dispatch] = useReducer(TodoReducer, []);
 
   useEffect(() => {
-    const data = localStorage.getItem('todos');
-    dispatch({ type: 'reset', payload: JSON.parse(data) });
+    const todos = localStorage.getItem('todos') || "[]";
+    dispatch({ type: 'reset', payload: JSON.parse(todos) });
   }, [dispatch]);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
     <TodoContext.Provider value={dispatch}>
       <div className="app">
         <h1>Moto</h1>
+        <AddTodoForm />
         <TodoList todos={state} />
       </div>
     </TodoContext.Provider>

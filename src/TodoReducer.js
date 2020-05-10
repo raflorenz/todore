@@ -1,5 +1,3 @@
-import { useReducer } from 'react';
-
 function TodoReducer(state, action) {
     switch (action.type) {
         case 'add':
@@ -40,6 +38,4 @@ function TodoReducer(state, action) {
     }
 }
 
-export function useTodo() {
-    return useReducer(TodoReducer, []);
-}
+export default TodoReducer;
