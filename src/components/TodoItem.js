@@ -37,7 +37,7 @@ export function TodoItem({ id, title, completed }) {
         }} 
       />
 
-      <button onClick={() => dispatch({ type: 'delete', payload: id })}>Delete</button>
+      <button onClick={() => window.confirm('Are you sure you want to delete this item?') && dispatch({ type: 'delete', payload: id })}>Delete</button>
     </div>
   );
 }
