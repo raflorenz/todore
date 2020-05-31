@@ -12,7 +12,7 @@ export function AddTodoForm() {
     }
 
     return (
-        <form onSubmit={submitForm} style={{ marginBottom: '20px' }}>
+        <form onSubmit={submitForm}>
             <input type="text" value={input} autoFocus required onChange={e => setInput(e.target.value)} />
             <button>Add todo</button>
         </form>

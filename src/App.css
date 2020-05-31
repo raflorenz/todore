@@ -1,8 +1,13 @@
-html {
-    height: 100%;
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+.app {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
@@ -11,16 +16,25 @@ body {
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center;
-    height: 100%;
-    margin: 0;
+    min-height: 100vh;
+    font-size: calc(10px + 2vmin);
+    color: #282c34;
 }
 
-h1 {
-    margin: 0 0 20px;
+form {
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom: 1.8em;
+}
+
+form input {
+    padding: 10px;
+    font-size: 18px;
 }
 
 button {
-    margin-left: 5px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .todo-item {
@@ -28,7 +42,12 @@ button {
     display: flex;
     -webkit-justify-content: space-between;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.todo-item label {
+    margin: 0 20px;
+    line-height: 1;
 }
 
 .todo-item.completed label {
@@ -38,6 +57,8 @@ button {
 
 .todo-item .edit {
     display: none;
+    padding: 10px;
+    font-size: 18px;
 }
 
 .todo-item.editing .edit {
@@ -54,4 +75,18 @@ button {
 
 .todo-item:hover button {
     visibility: visible;
+}
+
+.todo-item.editing:hover button {
+    visibility: hidden;
+}
+
+.todo-view {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.todo-view input {
+    width: calc(10px + 2vmin);
+    height: calc(10px + 2vmin);
 }

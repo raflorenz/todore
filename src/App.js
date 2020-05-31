@@ -20,7 +20,7 @@ function App() {
   return (
     <TodoContext.Provider value={dispatch}>
       <div className="app">
-        <h1>Moto</h1>
+        <h1>Todore</h1>
         <AddTodoForm />
         <TodoList todos={state} />
       </div>
