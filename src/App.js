@@ -1,6 +1,7 @@
 import React, { useReducer, useEffect } from 'react';
 import { AddTodoForm } from './components/AddTodoForm';
 import { TodoList } from './components/TodoList';
+import TodoInfo from './components/TodoInfo';
 import TodoReducer from './TodoReducer';
 import TodoContext from './TodoContext';
 import './App.css';
@@ -23,6 +24,7 @@ function App() {
         <h1>Todore</h1>
         <AddTodoForm />
         <TodoList todos={state} />
+        <TodoInfo />
       </div>
     </TodoContext.Provider>
   );

@@ -13,7 +13,7 @@ export function AddTodoForm() {
 
     return (
         <form onSubmit={submitForm}>
-            <input type="text" value={input} autoFocus required onChange={e => setInput(e.target.value)} />
+            <input type="text" value={input} placeholder="What needs to be done?" autoFocus required onChange={e => setInput(e.target.value)} />
             <button>Add todo</button>
         </form>
     );

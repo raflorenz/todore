@@ -90,3 +90,29 @@ button {
     width: calc(10px + 2vmin);
     height: calc(10px + 2vmin);
 }
+
+.todo-info {
+    width: 100%;
+    max-width: 320px;
+    padding-top: 1em;
+    margin-top: 2.5em;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #bfbfbf;
+    text-align: center;
+}
+
+.todo-info p {
+    margin: 0.7em 0;
+    line-height: 1;
+}
+
+.todo-info a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.todo-info a:hover {
+    color: #282c34;
+    text-decoration: underline;
+}
